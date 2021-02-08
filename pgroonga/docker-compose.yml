@@ -1,11 +1,12 @@
 version: "3.3"
 services:
   PGroonga:
+    container_name: n2n_postgres
     restart: always
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: db_n2n
+      POSTGRES_DB: n2n_db
       POSTGRES_PASSWORD: admin4321
       POSTGRES_USER: postgres
     volumes:
