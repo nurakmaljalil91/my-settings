@@ -6,9 +6,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: n2n_db
-      POSTGRES_PASSWORD: admin4321
-      POSTGRES_USER: postgres
+      - POSTGRES_PASSWORD=admin4321
     volumes:
       - "$HOME/docker/volumes/postgres:/var/lib/postgresql/data"
     image: groonga/pgroonga:latest
