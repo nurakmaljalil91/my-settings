@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  postgresql:
+    container_name: pg1
+    image: "bitnami/postgresql:13"
+    ports:
+      - "5432:5432"
+    volumes:
+      - type: bind
+        source: /home/fundamentals/pgdata
+        target: /bitnami/postgresql
+      - type: bind
+        source: /home/fundamentals/pgconf
+        target: /bitnami/postgresql/conf
+      - type: bind
+        source: /home/fundamentals/copy
+        target: /copy
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    shm_size: 4gb
+    environment:
+      - POSTGRESQL_PASSWORD=admin4321
