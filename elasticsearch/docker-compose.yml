@@ -3,7 +3,7 @@ version: "3.8"
 services:
   es01:
     build: .
-    image: elasticsearch-7.11.2
+    image: elasticsearch-7.12
     container_name: es01
     environment:
       - node.name=es01
@@ -30,7 +30,7 @@ services:
       - elastic
   es02:
     build: .
-    image: elasticsearch-7.11.2
+    image: elasticsearch-7.12
     container_name: es02
     environment:
       - node.name=es02
