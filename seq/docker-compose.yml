@@ -10,5 +10,5 @@ services:
         environment:
             - ACCEPT_EULA=Y
         volumes:
-            - '$HOME/docker/logs/webapi:/data'
+            - '$HOME/docker/logs/seq:/data'
         image: 'datalust/seq:latest'
