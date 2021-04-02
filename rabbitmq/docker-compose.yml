@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  rabbitmq:
+    container_name: rbmq01
+    ports:
+      - "15672:15672"
+    image: "rabbitmq:3-management"
