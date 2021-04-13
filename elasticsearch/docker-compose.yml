@@ -19,7 +19,7 @@ services:
     volumes:
       - type: bind
         source: /home/elasticsearch/data01
-        target: /usr/share/elasticsearch/log
+        target: /usr/share/elasticsearch/data
       - type: bind
         source: /home/elasticsearch/logs01
         target: /usr/share/elasticsearch/logs
