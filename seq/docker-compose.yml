@@ -1,14 +1,14 @@
-version: '3.3'
+version: "3.3"
 services:
-    seq:
-        ports:
-            - true
-            - '8081:80'
-            - '5341:5341'
-        restart: unless-stopped
-        container_name: my_seq
-        environment:
-            - ACCEPT_EULA=Y
-        volumes:
-            - '$HOME/docker/logs/seq:/data'
-        image: 'datalust/seq:latest'
+  seq:
+    ports:
+      - true
+      - "8081:80"
+      - "5341:5341"
+    restart: unless-stopped
+    container_name: my_seq
+    environment:
+      - ACCEPT_EULA=Y
+    volumes:
+      - "$HOME/docker/logs/seq:/data"
+    image: "datalust/seq:latest"

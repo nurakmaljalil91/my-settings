@@ -1,0 +1,32 @@
+version: "2"
+services:
+  elasticsearch-node1:
+    image: docker.io/bitnami/elasticsearch:7
+    environment:
+      - ELASTICSEARCH_CLUSTER_NAME=elasticsearch-cluster
+      - ELASTICSEARCH_CLUSTER_HOSTS=elasticsearch-node1,elasticsearch-node2
+      - ELASTICSEARCH_NODE_NAME=elasticsearch-node1
+      - ELASTICSEARCH_HEAP_SIZE=1g
+      - ELASTICSEARCH_PLUGINS=analysis-icu
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - "elasticsearch_node1_data:/bitnami"
+
+  elasticsearch-node2:
+    image: docker.io/bitnami/elasticsearch:7
+    environment:
+      - ELASTICSEARCH_CLUSTER_NAME=elasticsearch-cluster
+      - ELASTICSEARCH_CLUSTER_HOSTS=elasticsearch-node1,elasticsearch-node2
+      - ELASTICSEARCH_NODE_NAME=elasticsearch-node2
+      - ELASTICSEARCH_HEAP_SIZE=1g
+      - ELASTICSEARCH_PLUGINS=analysis-icu
+    volumes:
+      - "elasticsearch_node2_data:/bitnami"
+
+volumes:
+  elasticsearch_node1_data:
+    driver: local
+  elasticsearch_node2_data:
+    driver: local
