@@ -7,7 +7,7 @@ services:
       - 5672:5672
       - 15672:15672
     volumes:
-      - "rabbitmq_data:/bitnami"
+      - "/home/volumes/rabbitmq:/bitnami"
     environment:
       RABBITMQ_COMMUNITY_PLUGINS: "https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases/download/3.8.9/rabbitmq_delayed_message_exchange-3.8.9-0199d11c.ez"
       RABBITMQ_PLUGINS: "rabbitmq_shovel,rabbitmq_shovel_management,rabbitmq_delayed_message_exchange"
