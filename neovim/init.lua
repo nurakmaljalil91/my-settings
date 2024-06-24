@@ -193,6 +193,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -260,9 +261,20 @@ require("lazy").setup({
 					path = "~/OneDrive/Software Engineer and Programming",
 				},
 			},
-
 			-- see below for full list of options 👇
 		},
+	},
+	-- install nvim-tree
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup({})
+		end,
 	},
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
